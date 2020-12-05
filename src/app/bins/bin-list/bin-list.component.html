@@ -1,1 +1,23 @@
-<p>bin-list works!</p>
+<nb-card>
+  <nb-card-header>Bins</nb-card-header>
+  <nb-card-body style="max-height: calc(100vh - 274px); overflow-y: auto">
+    <table class="">
+      <thead>
+        <tr>
+          <th width="25%">ID</th>
+          <th width="40%">Name</th>
+          <th width="10%">Fill</th>
+          <th width="25%">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let bin of bins">
+          <td>{{ bin.id }}</td>
+          <td>{{ bin.name }}</td>
+          <td>{{ bin.fillLevel }}</td>
+          <td>ac</td>
+        </tr>
+      </tbody>
+    </table>
+  </nb-card-body>
+</nb-card>
