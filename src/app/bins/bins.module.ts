@@ -3,18 +3,28 @@ import { CommonModule } from '@angular/common';
 
 import { BinsRoutingModule } from './bins-routing.module';
 import { BinListComponent } from './bin-list/bin-list.component';
-import { NbCardModule } from '@nebular/theme';
-import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { NbButtonModule, NbCardModule, NbPopoverModule } from '@nebular/theme';
 import { HttpClientModule } from '@angular/common/http';
+import { BinDetailsComponent } from './bin-details/bin-details.component';
+import { BinLocationComponent } from './components/bin-location/bin-location.component';
+import { BinMessagesChartComponent } from './components/bin-messages-chart/bin-messages-chart.component';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 @NgModule({
-  declarations: [BinListComponent],
+  declarations: [
+    BinListComponent,
+    BinDetailsComponent,
+    BinLocationComponent,
+    BinMessagesChartComponent,
+  ],
   imports: [
     CommonModule,
     HttpClientModule,
     BinsRoutingModule,
     NbCardModule,
-    Ng2SmartTableModule,
+    NbButtonModule,
+    NbPopoverModule,
+    GoogleMapsModule,
   ],
 })
 export class BinsModule {}

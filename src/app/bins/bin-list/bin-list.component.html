@@ -4,18 +4,42 @@
     <table class="">
       <thead>
         <tr>
-          <th width="25%">ID</th>
-          <th width="40%">Name</th>
-          <th width="10%">Fill</th>
-          <th width="25%">Actions</th>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Fill</th>
+          <th width="20%">Actions</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let bin of bins">
           <td>{{ bin.id }}</td>
-          <td>{{ bin.name }}</td>
+          <td>
+            <a [routerLink]="['/', 'bins', bin.id]">{{ bin.name }}</a>
+          </td>
           <td>{{ bin.fillLevel }}</td>
-          <td>ac</td>
+          <td>
+            <button
+              nbButton
+              shape="round"
+              size="tiny"
+              status="success"
+              [nbPopover]="chartComponent"
+            >
+              messages
+            </button>
+            <button
+              nbButton
+              shape="round"
+              size="tiny"
+              status="primary"
+              [nbPopover]="mapComponent"
+              [nbPopoverContext]="{
+                position: { lat: bin.lat, lng: bin.long }
+              }"
+            >
+              location
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>

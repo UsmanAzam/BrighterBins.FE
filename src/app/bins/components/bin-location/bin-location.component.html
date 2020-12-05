@@ -1,0 +1,5 @@
+<label>Bin Location: [{{ position.lat }} , {{ position.lng }}]</label>
+
+<google-map [center]="position" [zoom]="8">
+  <map-marker [position]="position"></map-marker>
+</google-map>
