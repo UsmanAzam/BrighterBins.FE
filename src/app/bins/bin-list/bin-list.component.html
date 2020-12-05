@@ -23,7 +23,9 @@
               shape="round"
               size="tiny"
               status="success"
+              nbPopoverTrigger="hover"
               [nbPopover]="chartComponent"
+              [nbPopoverContext]="{ binId: bin.id }"
             >
               messages
             </button>
@@ -32,6 +34,7 @@
               shape="round"
               size="tiny"
               status="primary"
+              nbPopoverTrigger="hover"
               [nbPopover]="mapComponent"
               [nbPopoverContext]="{
                 position: { lat: bin.lat, lng: bin.long }

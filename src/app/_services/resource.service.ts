@@ -124,6 +124,12 @@ export class ResourceService<T extends Resource> {
       .pipe(map((data: any) => this.convertData(data.model)));
   }
 
+  subList(id: number, subResource: string): any {
+    return this.httpClient
+      .get(`${this.url}/${this.endpoint}/${id}/${subResource}`)
+      .pipe(map((data: any) => this.convertData(data.model)));
+  }
+
   pagedList(queryOptions: QueryOptions): Observable<T[]> {
     return this.httpClient
       .get(`${this.url}/${this.endpoint}?${queryOptions.toQueryString()}`)
