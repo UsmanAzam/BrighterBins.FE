@@ -13,7 +13,6 @@ export class SignupComponent implements OnInit {
   @ViewChild('form', { static: true })
   form: NgForm;
   user: User = new User();
-  userAlreadyExists = false;
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {}
