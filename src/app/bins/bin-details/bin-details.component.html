@@ -1,5 +1,84 @@
 <nb-card>
-  <nb-card-header>Bins</nb-card-header>
+  <nb-card-header>{{ bin?.name }}</nb-card-header>
   <nb-card-body style="max-height: calc(100vh - 274px); overflow-y: auto">
+    <form>
+      <div class="form-row">
+        <div class="form-group col-md-2">
+          <label for="binId">Bin ID</label>
+          <input
+            type="number"
+            class="form-control"
+            id="binId"
+            name="id"
+            [(value)]="bin.id"
+            disabled
+            placeholder=""
+          />
+        </div>
+        <div class="form-group col-md-4">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            [(value)]="bin.name"
+            id="name"
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="fill">Fill</label>
+          <input
+            type="number"
+            class="form-control"
+            name="fill"
+            [(value)]="bin.fillLevel"
+            id="fill"
+          />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="lat">Latitude</label>
+          <input
+            type="number"
+            class="form-control"
+            id="lat"
+            name="lat"
+            [(value)]="bin.lat"
+            placeholder=""
+          />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="long">Longtitude</label>
+          <input
+            type="number"
+            class="form-control"
+            id="long"
+            name="long"
+            [(value)]="bin.long"
+            placeholder=""
+          />
+        </div>
+      </div>
+      <b>Messages</b>
+      <table id="msgs">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Time</th>
+            <th>Fill</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let msg of bin?.messages">
+            <td>{{ msg.id }}</td>
+            <td>
+              {{ msg.time }}
+            </td>
+            <td>{{ msg.fill }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
   </nb-card-body>
 </nb-card>

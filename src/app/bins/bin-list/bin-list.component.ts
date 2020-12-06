@@ -26,13 +26,13 @@ export class BinListComponent implements OnInit {
       if (params.page_size && params.page_number) {
         this.query.pageSize = params.page_size;
         this.query.pageNumber = params.page_number;
-        this.binService.getBinPage(this.query).subscribe((data) => {
-          this.page = data;
-          this.query.pageNumber = data.pageNumber;
-          this.query.pageSize = data.pageSize;
-        });
+        this.getData();
       }
     });
+    this.getData();
+  }
+
+  getData() {
     this.binService.getBinPage(this.query).subscribe((data) => {
       this.page = data;
       this.query.pageNumber = data.pageNumber;

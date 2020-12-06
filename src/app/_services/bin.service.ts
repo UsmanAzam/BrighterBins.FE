@@ -44,4 +44,10 @@ export class BinService {
       .pipe(map((data: any) => data))
       .toPromise();
   }
+
+  getBinById(id: number): Observable<Bin> {
+    return this.http
+      .get<Bin>(`${this.binsUrl}/${id}`)
+      .pipe(map((data: any) => data.model));
+  }
 }
