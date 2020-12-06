@@ -10,6 +10,7 @@ import { BinLocationComponent } from './components/bin-location/bin-location.com
 import { BinMessagesChartComponent } from './components/bin-messages-chart/bin-messages-chart.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { ChartsModule } from 'ng2-charts';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ChartsModule } from 'ng2-charts';
     NbPopoverModule,
     GoogleMapsModule,
     ChartsModule,
+    SharedModule,
   ],
 })
 export class BinsModule {}

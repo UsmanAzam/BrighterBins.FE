@@ -17,7 +17,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { NotFoundComponent } from './common/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
-import { GoogleMapsModule } from '@angular/google-maps';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -38,6 +38,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
     NbThemeModule.forRoot({ name: 'default' }),
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

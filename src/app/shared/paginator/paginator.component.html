@@ -1,0 +1,39 @@
+<td colspan="2">
+  <span class="align-self-center mb-1 mx-1 text-muted">Items per page:</span>
+  <nb-select
+    [(selected)]="page.pageSize"
+    size="small"
+    status="basic"
+    (selectedChange)="updatePageSize($event)"
+  >
+    <nb-option [value]="5">5</nb-option>
+    <nb-option [value]="10">10</nb-option>
+    <nb-option [value]="20">20</nb-option>
+    <nb-option [value]="50">50</nb-option>
+    <nb-option [value]="100">100</nb-option>
+  </nb-select>
+</td>
+<td colspan="2" style="text-align: right">
+  <span class="align-self-center mb-1 mr-2 text-muted">
+    Shows {{ page.pageNumber }} of {{ page.pageCount }}
+  </span>
+  <button
+    nbButton
+    status="default"
+    size="small"
+    [disabled]="page.pageNumber <= 1"
+    (click)="previousPage()"
+  >
+    <nb-icon icon="arrow-ios-back-outline"></nb-icon>
+  </button>
+
+  <button
+    nbButton
+    status="default"
+    size="small"
+    [disabled]="page.pageNumber >= page.pageCount"
+    (click)="nextPage()"
+  >
+    <nb-icon icon="arrow-ios-forward-outline"></nb-icon>
+  </button>
+</td>

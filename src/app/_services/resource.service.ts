@@ -5,7 +5,6 @@ import { Resource } from '../_models/resource';
 import { Serializer } from '../_serializers/serializer';
 import { map, tap } from 'rxjs/operators';
 import { QueryOptions } from '../_utils/query-options';
-
 export class ResourceService<T extends Resource> {
   url: string;
   endpoint: string;

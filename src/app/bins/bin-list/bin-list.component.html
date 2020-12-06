@@ -1,7 +1,7 @@
 <nb-card>
   <nb-card-header>Bins</nb-card-header>
   <nb-card-body style="max-height: calc(100vh - 274px); overflow-y: auto">
-    <table class="">
+    <table id="bins">
       <thead>
         <tr>
           <th>ID</th>
@@ -11,7 +11,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let bin of bins">
+        <tr *ngFor="let bin of page?.model">
           <td>{{ bin.id }}</td>
           <td>
             <a [routerLink]="['/', 'bins', bin.id]">{{ bin.name }}</a>
@@ -45,6 +45,9 @@
           </td>
         </tr>
       </tbody>
+      <tfoot>
+        <tr *ngIf="page" app-paginator [page]="page"></tr>
+      </tfoot>
     </table>
   </nb-card-body>
 </nb-card>
