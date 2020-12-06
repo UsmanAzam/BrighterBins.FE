@@ -6,6 +6,7 @@ import { ApiEndpoints } from '../app.constants';
 import { Bin } from '../_models/bin';
 import { Message } from '../_models/message';
 import { BinSerializer } from '../_serializers/bin.serializer';
+import { QueryOptions } from '../_utils/query-options';
 import { ResourceService } from './resource.service';
 
 @Injectable({
@@ -16,8 +17,9 @@ export class BinService extends ResourceService<Bin> {
     super(httpClient, ApiEndpoints.bins, new BinSerializer());
   }
 
-  async getBinList(): Promise<Bin[]> {
-    return await this.list().toPromise();
+  async getBinPagedList(query: QueryOptions): Promise<Bin[]> {
+    console.log(query);
+    return await this.pagedList(query).toPromise();
   }
 
   async getMessagesByBin(id: number): Promise<any[]> {

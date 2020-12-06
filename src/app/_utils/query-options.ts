@@ -1,28 +1,23 @@
 export interface QueryBuilder {
-  // toQueryMap: () => Map<string, string>;
+  toQueryMap: () => Map<string, string>;
   toQueryString: () => string;
 }
 
 export class QueryOptions implements QueryBuilder {
-  // public pageNumber: number;
-  // public pageSize: number;
-  private queryMap = new Map<string, string>();
+  public pageNumber: number;
+  public pageSize: number;
 
   constructor() {
-    // this.pageNumber = 1;
-    // this.pageSize = 10000;
+    this.pageNumber = 1;
+    this.pageSize = 10;
   }
 
-  private toQueryMap() {
-    // const queryMap = new Map<string, string>();
-    // queryMap.set('pageNumber', `${this.pageNumber}`);
-    // queryMap.set('pageSize', `${this.pageSize}`);
+  toQueryMap() {
+    const queryMap = new Map<string, string>();
+    queryMap.set('pageNumber', `${this.pageNumber}`);
+    queryMap.set('pageSize', `${this.pageSize}`);
 
-    return this.queryMap;
-  }
-
-  addQuery(key: string, value: string) {
-    this.queryMap.set(key, value);
+    return queryMap;
   }
 
   toQueryString() {
