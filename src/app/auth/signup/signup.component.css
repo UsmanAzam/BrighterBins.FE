@@ -1,0 +1,41 @@
+:host {
+  width: 100%;
+  height: 100%;
+}
+
+nb-card {
+  box-shadow: 0 0 20px 0 #5dcfe3;
+  border-radius: 20px;
+  height: 100%;
+}
+
+.row {
+  display: flex;
+}
+.login {
+  background-color: #e6e6e6;
+  height: 100% !important;
+  background-image: url("../../../assets/images/more-leaves.png");
+  background-repeat: repeat;
+}
+
+.Absolute-Center {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.Absolute-Center.is-Responsive {
+  width: 50%;
+  height: 30%;
+  min-width: 200px;
+  max-width: 400px;
+  padding: 40px;
+  background-color: #fff;
+}
+
+.desciption {
+}

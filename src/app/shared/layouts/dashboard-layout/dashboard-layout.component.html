@@ -1,0 +1,18 @@
+<nb-layout>
+  <nb-layout-header fixed>
+    <nb-icon
+      (click)="toggle()"
+      icon="menu-outline"
+      style="font-size: 30px; cursor: pointer; user-select: none"
+    ></nb-icon>
+    <h4 style="margin: 15px">Brighter Bins</h4>
+  </nb-layout-header>
+  <nb-sidebar>
+    <nb-menu [items]="menu" autoCollapse="true"></nb-menu>
+  </nb-sidebar>
+
+  <nb-layout-column class="colored-column-basic">
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+  <nb-layout-footer fixed> ©2020 by BrighterBins </nb-layout-footer>
+</nb-layout>

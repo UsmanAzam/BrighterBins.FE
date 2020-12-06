@@ -10,6 +10,7 @@ import {
   NbThemeModule,
   NbMenuModule,
   NbIconModule,
+  NbCardModule,
 } from '@nebular/theme';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
@@ -18,6 +19,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { NotFoundComponent } from './common/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
+import { IntroComponent } from './intro';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { SharedModule } from './shared/shared.module';
     LoginComponent,
     SignupComponent,
     NotFoundComponent,
+    IntroComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +38,7 @@ import { SharedModule } from './shared/shared.module';
     BrowserAnimationsModule,
     NbEvaIconsModule,
     NbIconModule,
+    NbCardModule,
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
     NbThemeModule.forRoot({ name: 'default' }),
