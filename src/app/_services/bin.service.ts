@@ -7,9 +7,7 @@ import { ApiEndpoints } from '../app.constants';
 import { Bin } from '../_models/bin';
 import { Message } from '../_models/message';
 import { Page } from '../_models/page';
-import { BinSerializer } from '../_serializers/bin.serializer';
 import { QueryOptions } from '../_utils/query-options';
-import { ResourceService } from './resource.service';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -20,7 +18,7 @@ const API_URL = environment.api_url;
   providedIn: 'root',
 })
 export class BinService {
-  private binsUrl = API_URL + '/bins';
+  private binsUrl = API_URL + '/' + ApiEndpoints.bins;
   constructor(private http: HttpClient) {}
 
   public getBinPage(query: QueryOptions): Observable<Page<Bin>> {
