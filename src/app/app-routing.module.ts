@@ -3,9 +3,20 @@ import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { NotFoundComponent } from './common/not-found/not-found.component';
+import { HomeComponent } from './home/home.component';
 import { DashboardLayoutComponent } from './shared/layouts/dashboard-layout/dashboard-layout.component';
 
 const routes: Routes = [
+  {
+    path: 'home',
+    component: DashboardLayoutComponent,
+    children: [
+      {
+        path: '',
+        component: HomeComponent,
+      },
+    ],
+  },
   {
     path: 'bins',
     component: DashboardLayoutComponent,

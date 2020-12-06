@@ -39,4 +39,11 @@ export class BinService {
       .pipe(map((data: any) => data.model))
       .toPromise();
   }
+
+  async getBinCount(): Promise<number> {
+    return await this.http
+      .get<Message>(`${this.binsUrl}/count`)
+      .pipe(map((data: any) => data))
+      .toPromise();
+  }
 }

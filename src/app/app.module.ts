@@ -20,6 +20,7 @@ import { NotFoundComponent } from './common/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { IntroComponent } from './intro';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { IntroComponent } from './intro';
     SignupComponent,
     NotFoundComponent,
     IntroComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

@@ -23,7 +23,7 @@ export class DashboardLayoutComponent implements OnInit {
     {
       title: 'Logout',
       icon: 'log-out-outline',
-      link: '/logout',
+      link: '/login',
       home: true,
     },
   ];

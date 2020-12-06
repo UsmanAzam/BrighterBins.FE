@@ -25,7 +25,9 @@ import { Component } from '@angular/core';
       <li>emissions greener cities. ​</li>
     </ul>
 
-    <p>Our system cuts up to 40% of costs on waste collections.</p>
+    <p>
+      Our system cuts up to <b><i>40% of costs</i></b> on waste collections.
+    </p>
 
     <b>We made it easy for you. Calculate your cost savings right now.</b>
   `,
